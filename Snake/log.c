@@ -36,3 +36,9 @@ void printLog(FILE* log,char* level, struct tm* date, char *msg) {
     if (lenght < 0)
       return 1;
 }
+
+void closeLog() {
+  if (fclose(log)) {
+    perror("fail close log file");
+  }
+}
